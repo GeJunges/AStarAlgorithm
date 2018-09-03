@@ -117,29 +117,4 @@ namespace Algorithms.TwoDimensionalMap {
             return (int)(Math.Pow(Math.Abs(end.X - step.X), 2) + Math.Pow(Math.Abs(end.Y - step.Y), 2));
         }
     }
-
-    public class Location {
-        public int X { get; set; }
-        public int Y { get; set; }
-
-        public int ScoreG { get; set; }
-        public int ScoreH { get; set; }
-        public int ScoreGH {
-            get { return ScoreG + ScoreH; }
-        }
-
-        public Location Parent { get; set; }
-    }
-
-    public static class JaggedArrayExtention {
-        public static Point GetPositionXY<T>(this T[][] map, T value) {
-            for (int i = 0; i < map.Length; i++) {
-                T[] array = map[i];
-                for (int j = 0; j < array.Length; j++)
-                    if (array[j].Equals(value))
-                        return new Point(i, j);
-            }
-            return new Point(-1, -1);
-        }
-    }
 }
