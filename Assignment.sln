@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms", "Algorithms\Algorithms.csproj", "{599D8B88-8628-4809-B8E1-06DD5EA809AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithms", "Algorithms\Algorithms.csproj", "{599D8B88-8628-4809-B8E1-06DD5EA809AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms.UnitTests", "Algorithms.UnitTests\Algorithms.UnitTests.csproj", "{51A6B134-2843-4B16-8B02-C49C0B5664DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Algorithms.UnitTests", "Algorithms.UnitTests\Algorithms.UnitTests.csproj", "{51A6B134-2843-4B16-8B02-C49C0B5664DE}"
 	ProjectSection(ProjectDependencies) = postProject
 		{599D8B88-8628-4809-B8E1-06DD5EA809AB} = {599D8B88-8628-4809-B8E1-06DD5EA809AB}
 	EndProjectSection
