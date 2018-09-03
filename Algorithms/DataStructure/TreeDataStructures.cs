@@ -6,17 +6,15 @@ namespace Algorithms.DataStructure {
     public class TreeDataStructures {
 
         public Node[] RetrieveFullData(List<Entity> EntityList) {
-
-            var childrenIds = GetChildrenIds(EntityList);
-            var roots = GetRoots(EntityList, childrenIds);
-            var dic = CreateDicionaryOfIds(EntityList);
+            var roots = GetRoots(EntityList);
+            var fromNodeDictionary = CreateDicionaryOfIds(EntityList);
 
             var lista = new List<Node>();
             foreach (var root in roots) {
                 lista.Add(
                    new Node {
                        Id = root.FromNodeId,
-                       LinkedNodes = CreateNodes(dic[root.FromNodeId], dic)
+                       LinkedNodes = CreateNodes(fromNodeDictionary[root.FromNodeId], fromNodeDictionary)
                    });
             }
 
@@ -56,12 +54,13 @@ namespace Algorithms.DataStructure {
             return dic;
         }
 
-        private static IEnumerable<int> GetChildrenIds(List<Entity> EntityList) {
-            return EntityList.Select(child => child.ToNodeId);
+        private static IEnumerable<Entity> GetRoots(List<Entity> EntityList) {
+            var childrenIds = GetChildrenIds(EntityList);
+            return EntityList.Where(root => !childrenIds.Contains(root.FromNodeId));
         }
 
-        private static IEnumerable<Entity> GetRoots(List<Entity> EntityList, IEnumerable<int> childrenIds) {
-            return EntityList.Where(root => !childrenIds.Contains(root.FromNodeId));
+        private static IEnumerable<int> GetChildrenIds(List<Entity> EntityList) {
+            return EntityList.Select(child => child.ToNodeId);
         }
     }
 }
